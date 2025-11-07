@@ -14,13 +14,51 @@
         };
     </script>
 
+    <script src="https://cdn.cookielaw.org/consent/01983d79-97c6-7c6d-b18b-96739e2ea7ce/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="01983d79-97c6-7c6d-b18b-96739e2ea7ce" ></script>
+    <script type="text/javascript">
+        function OptanonWrapper() { 
 
+            console.log("OneTrust SDK Initialized.");
+            OneTrust.InsertScript('/scripts/perf_cookie.js', 'head', null, null, 'C0002')
+            showConsentState(); // Display anonymous UUID and categories
+        }
+    </script>
+
+<!-- OneTrust Cookies Consent Notice end for pb-del.github.io/dashboard -->
 
 </head>
 
+<body>
+
+    <h1> Welcome Back</h1>
+    <p>Your Cookie ID is now linked to your Data Subject Profile.</p>
+
+    <button onclick="showConsentState()">Show Current Consent State</button>
+    <pre id="output"></pre>
+
+    <a href="sdk-preferences/">Custom Preference Center (SDK)</a>
+
+    <!-- <a href="api-preferences/">Custom Preference Center (API)</a> -->
+    
+    <script>
+
+        function showConsentState() {
+            const domainData = OneTrust.GetDomainData();
+            const cookie_id = domainData?.ConsentIntegrationData?.consentPayload?.identifier || "Not available";
+            const id_type = domainData?.ConsentIntegrationData?.consentPayload?.identifierType || "Not available";
+            console.log("Consent State:", domainData);
+        }
+    </script>
+
+<!-- Test performance cookie -->
+    <script type="text/plain" class="optanon-category-C0002"> 
+        document.cookie = "Perf_TestCookie" + "=" + "Test_CookieHere!"; 
+    </script>
+
+    <script> 
+        window.addEventListener("OneTrustGroupsUpdated",event =>{
+        console.log(`The following groups are now active: ${event.detail.join(", ")}`)
+        });
+    </script>
 </body>
 </html>
-
-
-
-
