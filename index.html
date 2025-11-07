@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UCPM Test (Anonymous)</title> 
+
+    <!-- OneTrust Cookies Consent Notice start for fuzzy-sniffle-v9mjerm.pages.github.io -->
+
+    <script src="https://cdn.cookielaw.org/consent/019a5ef3-4d60-792d-b3f7-8c39fce26cc8/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="019a5ef3-4d60-792d-b3f7-8c39fce26cc8" ></script>
+    <script type="text/javascript">
+    function OptanonWrapper() {
+        if (OnetrustActiveGroups.includes("C0002")) {
+        toConsole();
+        }
+        
+         OneTrust.InsertScript('/scripts/perf_cookie.js', 'head', null, null, 'C0002')
+    }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for fuzzy-sniffle-v9mjerm.pages.github.io -->
+
+</head>
+
+<body>
+    <h1>Welcome to the public site!</h1>
+    <p> You are browsing anonymously. Preferences are saved against a cookie ID.</p>
+
+    
+    <a href="dashboard/">Log in</a>
+
+    <!-- OneTrust cookies settings button start -->
+    <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie settings</button>
+    <!-- OneTrust cookies settings button end -->
+
+    <!-- OneTrust cookies list start -->
+    <div id="ot-sdk-cookie-policy"></div>
+    <!-- OneTrust cookies list end -->
+
+    <script>
+          document.cookie = "Perf_TestCookie=Test_CookieHere!; path=/; max-age=86400";
+    </script>
+
+
+    <script> 
+        window.addEventListener("OneTrustGroupsUpdated",event =>{
+        console.log(`The following groups are now active: ${event.detail.join(", ")}`)
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
