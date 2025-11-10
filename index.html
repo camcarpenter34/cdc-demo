@@ -8,13 +8,19 @@
 
     <script src="https://cdn.cookielaw.org/consent/019a602e-0fff-7540-8b74-2187ecb35c29/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="019a602e-0fff-7540-8b74-2187ecb35c29" ></script>
     <script type="text/javascript">
+
+    function toConsole() {
+        console.log("SUCCESS");
+    }
+
     function OptanonWrapper() {
         if (OnetrustActiveGroups.includes("C0002")) {
             toConsole();
         }
-        
+
         OneTrust.InsertScript('/scripts/perf_cookie.js', 'head', null, null, 'C0002')
     }
+
     </script>
     <!-- OneTrust Cookies Consent Notice end for camcarpenter34.github.io/cdc-demo/ -->
 
@@ -47,6 +53,7 @@
 
 </body>
 </html>
+
 
 
 
