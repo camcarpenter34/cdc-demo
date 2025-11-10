@@ -17,11 +17,18 @@
     
     <!-- OneTrust Cookies Consent Notice start for fuzzy-sniffle-v9mjerm.pages.github.io -->
     
-    <script src="https://cdn.cookielaw.org/consent/019a5ef3-4d60-792d-b3f7-8c39fce26cc8/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="019a5ef3-4d60-792d-b3f7-8c39fce26cc8" ></script>
+    <!-- OneTrust Cookies Consent Notice start for camcarpenter34.github.io/cdc-demo/dashboard/ -->
+    <script src="https://cdn.cookielaw.org/consent/019a603f-596e-77e6-a6bb-8e1a08784bd5/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="019a603f-596e-77e6-a6bb-8e1a08784bd5" ></script>
     <script type="text/javascript">
-    function OptanonWrapper() { }
+    function OptanonWrapper() { 
+
+            console.log("OneTrust SDK Initialized.");
+            OneTrust.InsertScript('/scripts/perf_cookie.js', 'head', null, null, 'C0002')
+            showConsentState(); // Display anonymous UUID and categories
+        }
     </script>
-    <!-- OneTrust Cookies Consent Notice end for fuzzy-sniffle-v9mjerm.pages.github.io -->
+
+    <!-- OneTrust Cookies Consent Notice end for camcarpenter34.github.io/cdc-demo/dashboard/ -->
     </head>
 
 <body>
@@ -177,6 +184,7 @@
 </head>
 
 </html>
+
 
 
 
