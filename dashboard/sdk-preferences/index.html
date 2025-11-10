@@ -146,19 +146,19 @@
             const bitsCsv = getBitsFromUI();   // e.g., "C0002:1, C0003:0"
             if (bitsCsv) OneTrust.UpdateConsent('Category', bitsCsv);
 
-            OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNQU4tMzQ1Njc4In0.N2kP_BTB1p2DoReFkKrCEq3fxx5rJF_RZq9qmKyExw0", false); // push/pull consent record
+            OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZW1vSWRlbnRpZmllciI6ImRhdGFfc3ViamVjdF90ZXN0In0.-sryFktiV_khkPd79RW7mY1OTvKvDmVXocelr5ILMaA", false); // push/pull consent record
         }
 
         document.getElementById('get').addEventListener('click', getPreferences);
 
         document.getElementById('allowAll').addEventListener('click', () => {
             OneTrust.AllowAll();                    // enable all categories
-                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNQU4tMzQ1Njc4In0.N2kP_BTB1p2DoReFkKrCEq3fxx5rJF_RZq9qmKyExw0", false); // push/pull consent record 
+                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZW1vSWRlbnRpZmllciI6ImRhdGFfc3ViamVjdF90ZXN0In0.-sryFktiV_khkPd79RW7mY1OTvKvDmVXocelr5ILMaA", false); // push/pull consent record 
         });
 
         document.getElementById('rejectAll').addEventListener('click', () => {
             OneTrust.RejectAll();                   // reject all non-essential
-                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNQU4tMzQ1Njc4In0.N2kP_BTB1p2DoReFkKrCEq3fxx5rJF_RZq9qmKyExw0", false); // push/pull consent record 
+                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZW1vSWRlbnRpZmllciI6ImRhdGFfc3ViamVjdF90ZXN0In0.-sryFktiV_khkPd79RW7mY1OTvKvDmVXocelr5ILMaA", false); // push/pull consent record 
         })
 
         document.getElementById('submit').addEventListener('click', onSubmit);
@@ -177,6 +177,7 @@
 </head>
 
 </html>
+
 
 
 
