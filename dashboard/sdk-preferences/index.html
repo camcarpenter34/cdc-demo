@@ -9,7 +9,7 @@
                 id: "data_subject_test", // this would have to be pulled from the Identity provider
                 identifierType: "demoIdentifier",
                 isAnonymous: false,
-                token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiZGF0YV9zdWJqZWN0X3Rlc3QifQ.CR-3R6NV85CwgvOnbfOA4j3vz8efx3N0-NNia-zAdfI" // this would have to be generated server side using a cloud function
+                token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI" // this would have to be generated server side using a cloud function
             }
         };
     </script>
@@ -85,7 +85,7 @@
                         'Content-Type': 'application/json',
                         'identifier': 'data_subject_test',
                         'tenantId': '920f4633-570d-4168-84fb-38be47679c8f',
-                        'Authorization':  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiZGF0YV9zdWJqZWN0X3Rlc3QifQ.CR-3R6NV85CwgvOnbfOA4j3vz8efx3N0-NNia-zAdfI'
+                        'Authorization':  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI'
                     }
                 }); 
 
@@ -151,19 +151,19 @@
             const bitsCsv = getBitsFromUI();   // e.g., "C0002:1, C0003:0"
             if (bitsCsv) OneTrust.UpdateConsent('Category', bitsCsv);
 
-            OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiZGF0YV9zdWJqZWN0X3Rlc3QifQ.CR-3R6NV85CwgvOnbfOA4j3vz8efx3N0-NNia-zAdfI", false); // push/pull consent record
+            OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI", false); // push/pull consent record
         }
 
         document.getElementById('get').addEventListener('click', getPreferences);
 
         document.getElementById('allowAll').addEventListener('click', () => {
             OneTrust.AllowAll();                    // enable all categories
-                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiZGF0YV9zdWJqZWN0X3Rlc3QifQ.CR-3R6NV85CwgvOnbfOA4j3vz8efx3N0-NNia-zAdfI", false); // push/pull consent record 
+                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI", false); // push/pull consent record 
         });
 
         document.getElementById('rejectAll').addEventListener('click', () => {
             OneTrust.RejectAll();                   // reject all non-essential
-                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiZGF0YV9zdWJqZWN0X3Rlc3QifQ.CR-3R6NV85CwgvOnbfOA4j3vz8efx3N0-NNia-zAdfI", false); // push/pull consent record 
+                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI", false); // push/pull consent record 
         })
 
         document.getElementById('submit').addEventListener('click', onSubmit);
@@ -182,6 +182,7 @@
 </head>
 
 </html>
+
 
 
 
