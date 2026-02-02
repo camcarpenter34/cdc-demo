@@ -6,10 +6,10 @@
     <script> 
         var OneTrust = {
             dataSubjectParams: {
-                id: "data_subject_test", // this would have to be pulled from the Identity provider
-                identifierType: "demoIdentifier",
+                id: "29", // this would have to be pulled from the Identity provider
+                identifierType: "ECID",
                 isAnonymous: false,
-                token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI" // this would have to be generated server side using a cloud function
+                token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSJ9.3F9h9wd8Rzbi_0ulcw33zwlkZLlUH2l6A5haQFl2Dgs" // this would have to be generated server side using a cloud function
             }
         };
     </script>
@@ -83,9 +83,9 @@
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
-                        'identifier': 'data_subject_test',
+                        'identifier': '29',
                         'tenantId': '920f4633-570d-4168-84fb-38be47679c8f',
-                        'Authorization':  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI'
+                        'Authorization':  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSJ9.3F9h9wd8Rzbi_0ulcw33zwlkZLlUH2l6A5haQFl2Dgs'
                     }
                 }); 
 
@@ -151,19 +151,19 @@
             const bitsCsv = getBitsFromUI();   // e.g., "C0002:1, C0003:0"
             if (bitsCsv) OneTrust.UpdateConsent('Category', bitsCsv);
 
-            OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI", false); // push/pull consent record
+            OneTrust.syncConsentProfile("29", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSJ9.3F9h9wd8Rzbi_0ulcw33zwlkZLlUH2l6A5haQFl2Dgs", false); // push/pull consent record
         }
 
         document.getElementById('get').addEventListener('click', getPreferences);
 
         document.getElementById('allowAll').addEventListener('click', () => {
             OneTrust.AllowAll();                    // enable all categories
-                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI", false); // push/pull consent record 
+                OneTrust.syncConsentProfile("29", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSJ9.3F9h9wd8Rzbi_0ulcw33zwlkZLlUH2l6A5haQFl2Dgs", false); // push/pull consent record 
         });
 
         document.getElementById('rejectAll').addEventListener('click', () => {
             OneTrust.RejectAll();                   // reject all non-essential
-                OneTrust.syncConsentProfile("data_subject_test", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXRhX3N1YmplY3RfdGVzdCJ9.QFr2RoCU-aq1iMrG1gRm8wBeBxKn5hSHBJ5_sXa-YNI", false); // push/pull consent record 
+                OneTrust.syncConsentProfile("29", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSJ9.3F9h9wd8Rzbi_0ulcw33zwlkZLlUH2l6A5haQFl2Dgs", false); // push/pull consent record 
         })
 
         document.getElementById('submit').addEventListener('click', onSubmit);
@@ -182,6 +182,7 @@
 </head>
 
 </html>
+
 
 
 
